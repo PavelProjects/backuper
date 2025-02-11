@@ -3,7 +3,7 @@
 CONFIG_DIR="/home/pobopo/projects/backuper"
 NAS_DIR="/mnt/main/storage/backups"
 NAS_ADDRESS="admin@192.168.1.6"
-TMP_DIR="/tmp/backups"
+TMP_DIR="/home/pobopo/.backups"
 CHECKSUMS_DIR="checksums"
 XARGS_PROCESSES=10
 
@@ -51,7 +51,7 @@ while IFS= read -r target; do
   checksum_file=$CHECKSUMS_DIR/$name.sha256
 
   log "\tCaltulating checksum"
-  current_checksum=$(find $target -type f | xargs -P $XARGS_PROCESSES -I {} "sha256sum" "{}" | sort | sha256sum | awk '{print $1}')
+  current_checksum=$(find $target -type f -print0 | xargs -0 -P $XARGS_PROCESSES -I {} "sha256sum" "{}" | sort | sha256sum | awk '{print $1}')
   remote_checksum=$(ssh -n $NAS_ADDRESS "cat $checksum_file 2>/dev/null")
 
   if [[ $current_checksum == $remote_checksum ]]; then
