@@ -1,0 +1,13 @@
+/home/pobopo/.zhistory
+/home/pobopo/kde-save.knsv
+/home/pobopo/.gitconfig
+/home/pobopo/.git-credentials
+/home/pobopo/.config
+/home/pobopo/.local/share/JetBrains
+/home/pobopo/.local/share/konsole
+/home/pobopo/software
+/home/pobopo/.vscode-oss
+/home/pobopo/Documents
+/home/pobopo/Pictures
+/home/pobopo/Videos
+/home/pobopo/projects
