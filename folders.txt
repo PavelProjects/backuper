@@ -11,3 +11,4 @@
 /home/pobopo/Pictures
 /home/pobopo/Videos
 /home/pobopo/projects
+/var/cache/pacman/pkg
